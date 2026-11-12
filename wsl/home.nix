@@ -84,6 +84,7 @@
       gnupg
       age
       lazygit
+	  lefthook
 
       # nix related
       #
