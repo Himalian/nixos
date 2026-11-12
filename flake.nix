@@ -68,6 +68,7 @@
             ./wsl/init.nix
             nixos-wsl.nixosModules.default
             determinate.nixosModules.default
+            agenix.nixosModules.default
             {
               # Do not edit this stateVersion.
               # stateVersion defines the initial state of the system.
