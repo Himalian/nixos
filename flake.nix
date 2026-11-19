@@ -13,6 +13,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/3";
+    # nixos-hardware.url = "github:NixOS/nixos-hardware";
     # dotfiles = {
     #   url = "github:Himalian/dotfiles";
     #   flake = false;
@@ -38,7 +39,6 @@
       nixpkgs,
       nixpkgs-unstable,
       nixos-wsl,
-      nixos-hardware,
       nix-ld,
       home-manager,
       agenix,
