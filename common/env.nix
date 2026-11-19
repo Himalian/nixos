@@ -12,8 +12,7 @@
     "flakes"
   ];
   nix.settings.trusted-users = [
-	"${username}"
-    "butter"
+    "${username}"
     "root"
   ];
 

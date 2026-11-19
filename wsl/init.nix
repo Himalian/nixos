@@ -2,7 +2,6 @@
 # main entrance of wsl config
 {
   username,
-  inputs,
   ...
 }:
 {
@@ -16,13 +15,14 @@
     ../common/registy.nix
     ./nvidia.nix
     ../common/fonts.nix
-	./docker.nix
+    ./docker.nix
   ];
   wsl = {
     enable = true;
     defaultUser = "${username}";
     useWindowsDriver = true;
   };
+  # create user
   users.users.${username} = {
     createHome = true;
     description = "";
@@ -36,7 +36,6 @@
   };
   i18n = {
     defaultLocale = "zh_CN.UTF-8";
-
   };
   environment.variables = {
     IS_WSL = "true";
