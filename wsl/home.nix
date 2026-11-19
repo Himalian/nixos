@@ -125,13 +125,56 @@
 
   # 启用 starship，这是一个漂亮的 shell 提示符
   programs.starship = {
-    enable = false;
+    enable = true;
     # 自定义配置
     settings = {
       add_newline = false;
       aws.disabled = true;
       gcloud.disabled = true;
       line_break.disabled = true;
+      format = ''
+        $username$hostname$directory''${custom.nix_env}$status$character
+      '';
+
+      username = {
+        show_always = true;
+        style_user = "green";
+        style_root = "red bold";
+        format = "[$user]($style)";
+      };
+
+      hostname = {
+        ssh_only = false;
+        style = "white";
+        format = "[@$hostname]($style) ";
+      };
+
+      directory = {
+        style = "green";
+        truncation_length = 3;
+        truncate_to_repo = false;
+        format = "[$path]($style)";
+      };
+
+      custom.nix_env = {
+        command = "echo '(nix env)'";
+        when = ''
+          test -n "$IN_NIX_SHELL" || findmnt -n /usr >/dev/null 2>&1 || printf '%s\n' "$PATH" | tr ':' '\n' | grep -E '^/nix/store/' | grep -qvE -- '-(system-path|user-environment)/'
+        '';
+        style = "cyan";
+        format = " [$output]($style)";
+      };
+
+      status = {
+        disabled = false;
+        style = "red";
+        format = " [\\[$status\\]]($style)";
+      };
+
+      character = {
+        success_symbol = "[>](white)";
+        error_symbol = "[>](white)";
+      };
     };
   };
 
@@ -173,6 +216,7 @@
       nviim = "nvim";
       nvimm = "nvim";
       jsut = "just";
+      ls = "eza";
     };
     interactiveShellInit = ''
       # 将 xlings 追加到 PATH 最末尾
