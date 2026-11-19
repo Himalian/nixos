@@ -10,16 +10,23 @@
     nodejs
     # deno
     # pnpm
-	nil
+    nil
 
     pixi
     uv
     cargo
+    rustc
+    clippy
+    rust-analyzer
+    rustfmt
+    # rustup
     python3
-    rustup
     gcc
     clang
     clang-tools
 
   ];
+  environment.sessionVariables = {
+    RUST_SRC_PATH = "${pkgs.rustPlatform.rustLibSrc}";
+  };
 }
