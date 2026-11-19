@@ -84,7 +84,7 @@
       gnupg
       age
       lazygit
-	  lefthook
+      lefthook
 
       # nix related
       #
@@ -174,6 +174,14 @@
       nvimm = "nvim";
       jsut = "just";
     };
+    interactiveShellInit = ''
+      # 将 xlings 追加到 PATH 最末尾
+      for p in "$HOME/.xlings/bin" "$HOME/.xlings/subos/default/bin"
+        if test -d "$p"; and not contains "$p" $PATH
+          set -ga PATH "$p"
+        end
+      end
+    '';
   };
   programs.zoxide = {
     enable = true;
