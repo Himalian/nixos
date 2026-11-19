@@ -24,6 +24,46 @@
     just
     fish
     nushell
+    # create and enter a standard FHS environment
+    (buildFHSEnv {
+      name = "fhs";
+      targetPkgs =
+        pkgs: with pkgs; [
+          bash
+          fish
+          coreutils
+          gnused
+          gnugrep
+          gawk
+          findutils
+          diffutils
+          git
+          curl
+          wget
+          unzip
+          zip
+          python3
+          pkg-config
+          gnumake
+          cmake
+          ninja
+          gcc
+          binutils
+          glibc.dev
+        ];
+      multiPkgs =
+        pkgs: with pkgs; [
+          gcc.cc.lib
+          zlib
+          openssl
+          stdenv.cc.cc.lib
+          zlib
+          openssl
+          ncurses
+          libxml2
+        ];
+      runScript = "fish";
+    })
 
     # lix # nix cli with better experience
   ];
