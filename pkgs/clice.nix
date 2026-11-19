@@ -25,6 +25,7 @@ let
     bazel_9
   ) { };
 
+  # result hash of `bazel vendor` + some cleaning steps
   depsHash =
     {
       x86_64-linux = "sha256-UajWclXKUGMh4MrFW+A7+RD+Yk748c9If8m44NYzFnQ=";
@@ -57,7 +58,7 @@ buildBazelPackage rec {
       --replace-fail "/var/tmp/xclang-thinlto" "/tmp/xclang-thinlto"
   '';
 
-  # 保留 clice 自身的 Bzlmod 规则与 LLVM/Clang 工具链配置
+  # keep clics's bzlmod rules and toolchain configuration
   removeRulesCC = false;
   removeLocalConfigCc = false;
   dontAddBazelOpts = true;
@@ -90,7 +91,7 @@ buildBazelPackage rec {
     "--verbose_failures"
   ];
 
-  # 1: fetch and prepare deps
+  # 1: fetch and prepare dependency
   fetchAttrs = {
     hash = depsHash;
 
@@ -142,7 +143,7 @@ buildBazelPackage rec {
     '';
   };
 
-  # 2: build and install
+  # 2: build and install package
   buildAttrs = {
     preConfigure = ''
       mkdir -p /tmp/xclang-thinlto
