@@ -39,5 +39,7 @@
   };
   environment.variables = {
     IS_WSL = "true";
+    XLINGS_MIRROR_FALLBACK = "off";
+    XLINGS_ADAPTIVE_MIRROR = "off";
   };
 }
