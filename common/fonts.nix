@@ -24,8 +24,8 @@ in
   fonts.packages = [
     pkgs.noto-fonts
     pkgs.noto-fonts-cjk-serif
-	pkgs.jetbrains-mono
-	pkgs.noto-fonts-color-emoji
-	# harmonyos-sans
+    pkgs.jetbrains-mono
+    pkgs.noto-fonts-color-emoji
+    # harmonyos-sans
   ];
 }

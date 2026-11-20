@@ -25,7 +25,7 @@
           no-proxy = "";
         };
     };
-	# Fix port-forwarding timeout error by disabling iptables
+    # Fix port-forwarding timeout error by disabling iptables
     #
     # Potential Risks of disabling iptables:
     # 1. Loss of Real Client IP: Containers will see 'docker-proxy' (usually 172.17.0.1)
