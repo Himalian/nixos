@@ -13,6 +13,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/3";
+    mcpp.url = "github:mcpp-community/nix-mcpp";
     # nixos-hardware.url = "github:NixOS/nixos-hardware";
     # dotfiles = {
     #   url = "github:Himalian/dotfiles";
@@ -43,6 +44,7 @@
       home-manager,
       agenix,
       determinate,
+      mcpp,
       # dotfiles,
       ...
     }@inputs:

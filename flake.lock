@@ -186,6 +186,24 @@
         "type": "github"
       }
     },
+    "mcpp": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_5"
+      },
+      "locked": {
+        "lastModified": 1795159806,
+        "narHash": "sha256-T3ATUU0Wqx4A3KAwV6drFlI/PwUeChi5TE52lFdiBvc=",
+        "owner": "mcpp-community",
+        "repo": "nix-mcpp",
+        "rev": "a9c4f43070cfc48194ac0d81598cc1a876a2dcaa",
+        "type": "github"
+      },
+      "original": {
+        "owner": "mcpp-community",
+        "repo": "nix-mcpp",
+        "type": "github"
+      }
+    },
     "nix": {
       "inputs": {
         "bdwgc": "bdwgc",
@@ -231,7 +249,7 @@
     "nixos-wsl": {
       "inputs": {
         "flake-compat": "flake-compat_2",
-        "nixpkgs": "nixpkgs_5"
+        "nixpkgs": "nixpkgs_6"
       },
       "locked": {
         "lastModified": 1794351628,
@@ -358,6 +376,22 @@
     },
     "nixpkgs_5": {
       "locked": {
+        "lastModified": 1792094642,
+        "narHash": "sha256-zp8ToDMnqZcu4o4IH9pdwXFXGp7yLm/M0dEnNWnyd7I=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "fe13242281a67641c0102cdb1087f0ebe586c7df",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_6": {
+      "locked": {
         "lastModified": 1793865203,
         "narHash": "sha256-/cpdPHaySDIyCgZI6EWngiM6jK3YLUNzv1b7lTzy6Bk=",
         "owner": "NixOS",
@@ -372,7 +406,7 @@
         "type": "github"
       }
     },
-    "nixpkgs_6": {
+    "nixpkgs_7": {
       "locked": {
         "lastModified": 1794872590,
         "narHash": "sha256-E+XLAfnC7+bdr4qlEgRv6cdGmiqTU5oeFNKCha7epqQ=",
@@ -393,9 +427,10 @@
         "agenix": "agenix",
         "determinate": "determinate",
         "home-manager": "home-manager",
+        "mcpp": "mcpp",
         "nix-ld": "nix-ld",
         "nixos-wsl": "nixos-wsl",
-        "nixpkgs": "nixpkgs_6",
+        "nixpkgs": "nixpkgs_7",
         "nixpkgs-unstable": "nixpkgs-unstable"
       }
     }
