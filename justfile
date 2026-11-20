@@ -4,11 +4,22 @@ list:
 format:
 	nixfmt ./*.nix
 
-wsl:
-	sudo nixos-rebuild switch --flake .#wsl --impure
+# Build and switch NixOS configuration (default host: wsl)
+switch host="wsl" *args:
+	sudo nixos-rebuild switch --flake .#{{ host }} --impure {{ args }}
 
-wsl-trace:
-	sudo nixos-rebuild switch --flake .#wsl --impure --show-trace
+# Build NixOS configuration into ./result without switching
+build host="wsl" *args:
+	nixos-rebuild build --flake .#{{ host }} --impure {{ args }}
+
+# Build and activate NixOS configuration temporarily without adding boot entry
+test host="wsl" *args:
+	sudo nixos-rebuild test --flake .#{{ host }} --impure {{ args }}
+
+# Shorthand for `just switch wsl`
+wsl *args:
+	@just switch wsl {{ args }}
+
 # clean unused packages and delete old generations
 cleanup:
 	# 清理 7 天之前的所有历史版本
